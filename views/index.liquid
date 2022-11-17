@@ -3,41 +3,50 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{title}}</title>
+    <title>{{JosephsBlog}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link href="/stylesheets/style.css.liquid" rel="stylesheet">
   </head>
   <body>
-    <h1 id="topOfPage">Hello World This is my database</h1>
-    <img src="/images/meme2.jpg">
-    <ul>
-      {% for txt in data%}
-        <ul>{{txt.blog_id}} - {{txt.blog_txt}}
-        </ul>
-      {% endfor%}
-    </ul>
+    <h1 id="topOfPage">Welcome to Joseph's Blog</h1>
+    <div id="headerPic">
+      <img src="/images/screencode.jpg">
+    </div>
+    <h2>The Blog</h2>
+    <div id="mainContent">
+      <ul>
+        {% for txt in data%}
+          <ul>{{txt.blog_id}} - {{txt.blog_txt}}
+          </ul>
+        {% endfor%}
+      </ul>
 
-    <hr>
-    <h2>Add stuff</h2>
-    <form action="/add" method="POST">
-      <div>
-        <label for="blog">You can add whatver info you want to store.</label>
-        <input name="blog" id="blog" value="Hi this is my blog text!"/>
+      <hr>
+      <h2>Enter a Blog Post</h2>
+      <form action="/add" method="POST">
+        <div>
+          <label for="blog">Enter here:</label>
+          <input name="blog" id="blog" value="..."/>
+        </div>
+        <div>
+          <button>Add to the page</button>
+        </div>
+      </form>
+      <hr>
+      <h2>Update a Post</h2>
+      <form action="/delete" method="POST">
+        <div>
+          <label for="blog">Enter the id of the post you want to edit:</label>
+          <input name="blog" id="blog" value="1"/>
+        </div>
+        <div>
+          <button>Edit post</button>
+        </div>
       </div>
-      <div>
-        <button>Send my blog</button>
-      </div>
-    </form>
-    <hr>
-    <h2>Delete stuff</h2>
-    <form action="/delete" method="POST">
-      <div>
-        <label for="blog">Then you can delete it</label>
-        <input name="blog" id="blog" value="1"/>
-      </div>
-      <div>
-        <button>delete my blog</button>
+      <div id="aboutMe">
+        <h2>About Me</h2>
+        <p>My name is Joseph Cierzan!</p>
       </div>
     </form>
   </body>
