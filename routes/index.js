@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('sqlite3').verbose();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -16,20 +16,21 @@ router.get('/', function (req, res, next) {
         (err, rows) => {
           if (rows.length === 1) {
             console.log("Table exists!");
-            db.all(` select blog_id, blog_txt from blog`, (err, rows) => {
-              console.log("returning " + rows.length + " records");
+            db.all(`SELECT blog_id, blog_txt FROM blog`, (err, rows) => {
+              console.log("Returning " + rows.length + " records");
               res.render('index', { title: 'Express', data: rows });
             });
           } else {
             console.log("Creating table and inserting some sample data");
-            db.exec(`create table blog (
+            db.exec(`CREATE TABLE blog (
                      blog_id INTEGER PRIMARY KEY AUTOINCREMENT,
                      blog_txt text NOT NULL);
-                      insert into blog (blog_txt)
-                      values ('This is a great blog'),
-                             ('Oh my goodness blogging is fun');`,
+
+                      INSERT INTO blog (blog_txt)
+                      VALUES ('This is the first entry'),
+                             ('I also like to swim');`,
               () => {
-                db.all(` select blog_id, blog_txt from blog`, (err, rows) => {
+                db.all(`SELECT blog_id, blog_txt FROM blog`, (err, rows) => {
                   res.render('index', { title: 'Express', data: rows });
                 });
               });
@@ -37,47 +38,5 @@ router.get('/', function (req, res, next) {
         });
     });
 });
-
-router.post('/add', (req, res, next) => {
-  console.log("Adding blog to table without sanitizing input! YOLO BABY!!");
-  var db = new sqlite3.Database('mydb.sqlite3',
-    sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
-    (err) => {
-      if (err) {
-        console.log("Getting error " + err);
-        exit(1);
-      }
-      console.log("inserting " + req.body.blog);
-      //NOTE: This is dangerous! you need to sanitize input from the user
-      //this is ripe for a exploit! DO NOT use this in production :)
-      //Try and figure out how why this is unsafe and how to fix it.
-      //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
-      db.exec(`insert into blog ( blog_txt)
-                values ('${req.body.blog}');`)
-      //redirect to homepage
-      res.redirect('/');
-    }
-  );
-})
-
-router.post('/delete', (req, res, next) => {
-  console.log("deleting stuff without checking if it is valid! SEND IT!");
-  var db = new sqlite3.Database('mydb.sqlite3',
-    sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
-    (err) => {
-      if (err) {
-        console.log("Getting error " + err);
-        exit(1);
-      }
-      console.log("inserting " + req.body.blog);
-      //NOTE: This is dangerous! you need to sanitize input from the user
-      //this is ripe for a exploit! DO NOT use this in production :)
-      //Try and figure out how why this is unsafe and how to fix it.
-      //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
-      db.exec(`delete from blog where blog_id='${req.body.blog}';`);     
-      res.redirect('/');
-    }
-  );
-})
 
 module.exports = router;
