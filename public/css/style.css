@@ -12,8 +12,15 @@ body {
 .navBar {
   text-align: center;
   overflow: hidden;
-  background-color: #646E79;
+  background-color: #acacac;
   border-radius: 25%;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
 }
 
 .navBar a{
@@ -71,9 +78,6 @@ h2 {
   padding-bottom: 4px;
 }
 
-.picture {
-}
-
 #me  {
   border-radius: 50%;
   max-width: 100%;
@@ -86,21 +90,12 @@ h2 {
   margin-top: 40px;
 }
 
-.llbutton{
-  padding: 35px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: red;
-  margin: 5px;
-  border-radius: 25%;
-}
-
 .button{
   display:inline-block;
-  color:#444;
+  color:#2E0219;
   border:1px solid #CCC;
-  background:#DDD;
-  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  background:#8D98A7;
+  box-shadow: 0 0 5px -1px #646E78;
   cursor:pointer;
   vertical-align:middle;
   max-width: 100px;
