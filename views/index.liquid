@@ -7,41 +7,62 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' type='text/css' href='/images/style.css.liquid'>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1 id="topOfPage">Welcome to Joseph's Blog</h1>
-    <div id="headerPic"><!--
+    <div class="header">
+      <h1>
+        Welcome to Joseph's Blog</h1>
+      <!--
       <img src="/images/screencode.jpg">
       -->
     </div>
-    <div id="navBar">
+
+
+    <div class="navBar">
       <h2>Navigation</h2>
     </div>
-    <h2>The Blog</h2>
-    <div id="mainContent">
-      <ul>
-        {% for txt in data%}
-          <ul>{{txt.blog_id}} - {{txt.blog_txt}}
+
+    <div class="mainContent">
+      <h2>The Blog</h2>
+
+      <div class="mainBlog">
+        <div class="card">
+          <ul id="posts">
+            {% for txt in data%}
+              <div class="post">
+                <span class="postLabel">Entry: {{txt.blog_id}}</span>
+                <div class="text">
+                  {{txt.blog_txt}}
+                </div>
+              </div>
+            {% endfor%}
           </ul>
-        {% endfor%}
-      </ul>
-
-      <ul>
-        <li>
-          <a href="/create">Post</a>
-        </li>
-        <li>
-          <a href="/edit">Edit</a>
-        </li>
-        <li>
-          <a href="/delete">Delete</a>
-        </li>
-      </ul>
-
-      <div id="aboutMe">
-        <h2>About Me</h2>
-        <p>My name is Joseph Cierzan!</p>
+        </div>
       </div>
-    </body>
+
+      <div class="aboutMe">
+        <div class="card">
+          <h2>About Me</h2>
+          <div class="picture">
+            <img id="me" src="/images/picofme.JPG">
+          </div>
+          <p>
+            My name is Joseph Cierzan and welcome to my blog page. I am from southern California
+            and am now living in Boise Idaho and going to school for computer science. This is just a 
+                                                                                                                                                                                                            simple blog page that I made where I can post about things I find cool or just interesting.
+                                                                                                                                                                                                            Feel free to use it as you whish and if you want to make a post or edit one go for it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a class="button" href="/create">Post</a>
+      <a class="button" href="/edit">Edit</a>
+      <a class="button" href="/delete">Delete</a>
+    </div>
+
+
   </body>
 </html>

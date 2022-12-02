@@ -1,0 +1,90 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.navBar {
+  overflow: hidden;
+  background-color: red;
+}
+
+.mainContent {
+  background-color: rgb(5, 37, 112);
+}
+
+h2 {
+  text-align: center;
+}
+
+.aboutMe {   
+  float: left;
+  width: 25%;
+}
+
+.mainBlog {
+  float: right;
+  width: 75%;
+}
+
+.mainContent:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  background-color: rgb(93, 68, 233);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#posts {
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: space-around;
+}
+.post {
+  background-color: rgba(2, 0, 100, 0.779);
+  display: block;
+  box-shadow: 0 0 8px rgb(52, 133, 225), 0 0 10px purple;
+  border-radius: 25px;
+  padding: 20px;
+}
+.postLabel {
+  font-size: large;
+  display: inline-block;
+  padding: 2px;
+  padding-bottom: 4px;
+}
+
+.picture {
+  background-color: pink;
+}
+
+#me  {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.button{
+  padding: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: red;
+  margin: 5px;
+  border-radius: 25%;
+}
+
+
+
