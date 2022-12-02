@@ -20,28 +20,34 @@
 
 
     <div class="navBar">
-      <h2>Navigation</h2>
+      <nav>
+        <a href="#aboutMe">About Me</a>
+        |
+        <a href="#createButton">Add a Post</a>
+        |
+        <a href="#editButton">Edit a Post</a>
+        |
+        <a href="#deleteButton">Delete a Post</a>
+      </nav>
     </div>
 
     <div class="mainContent">
-      <h2>The Blog</h2>
+      <h2>The Blog Space</h2>
 
       <div class="mainBlog">
-        <div class="card">
-          <ul id="posts">
-            {% for txt in data%}
-              <div class="post">
-                <span class="postLabel">Entry: {{txt.blog_id}}</span>
-                <div class="text">
-                  {{txt.blog_txt}}
-                </div>
+        <ul id="posts">
+          {% for txt in data%}
+            <div class="post">
+              <span class="postLabel">Entry: {{txt.blog_id}}</span>
+              <div class="text">
+                {{txt.blog_txt}}
               </div>
-            {% endfor%}
-          </ul>
-        </div>
+            </div>
+          {% endfor%}
+        </ul>
       </div>
 
-      <div class="aboutMe">
+      <div id="aboutMe">
         <div class="card">
           <h2>About Me</h2>
           <div class="picture">
@@ -50,17 +56,17 @@
           <p>
             My name is Joseph Cierzan and welcome to my blog page. I am from southern California
             and am now living in Boise Idaho and going to school for computer science. This is just a 
-                                                                                                                                                                                                            simple blog page that I made where I can post about things I find cool or just interesting.
-                                                                                                                                                                                                            Feel free to use it as you whish and if you want to make a post or edit one go for it.
+                                                                                                                                                                                                                                                                                                            simple blog page that I made where I can post about things I find cool or just interesting.
+                                                                                                                                                                                                                                                                                                            Feel free to use it as you whish and if you want to make a post or edit one go for it.
           </p>
         </div>
       </div>
     </div>
 
     <div class="footer">
-      <a class="button" href="/create">Post</a>
-      <a class="button" href="/edit">Edit</a>
-      <a class="button" href="/delete">Delete</a>
+      <a class="button" id="createButton" href="/create">Post</a>
+      <a class="button" id="editButton" href="/edit">Edit</a>
+      <a class="button" id="deleteButton" href="/delete">Delete</a>
     </div>
 
 
