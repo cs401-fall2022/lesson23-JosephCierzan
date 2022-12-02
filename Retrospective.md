@@ -1,7 +1,7 @@
 # Retrospective
 
-- name: Jane Doe
-- email: janedoe@u.boisestate.edu
+- name: Jospeh Cierzan
+- email: josephcierzan@u.boisestate.edu
 
 ## Instructions
 
@@ -21,12 +21,14 @@ Be safe CITE!
 
 ## Experience
 
-TODO
+Setting up the page in the way I wanted was the most difficult part, alongside with just trying to come up with creative ideas. I was a bit confused on how
+well the nav bar had to work and if every page needed one. I was able to get the whole thing done and I had a lot of fun doing it 
 
 ## Known issues or Bugs
 
-TODO
+None
 
 ## Sources used
 
-TODO
+https://www.w3schools.com/css/tryit.asp?filename=trycss_website_layout_blog </br>
+
