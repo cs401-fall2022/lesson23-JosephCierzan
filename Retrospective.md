@@ -31,4 +31,8 @@ None
 ## Sources used
 
 https://www.w3schools.com/css/tryit.asp?filename=trycss_website_layout_blog </br>
+https://www.w3schools.com/css/css_website_layout.asp </br>
+https://www.editorx.com/shaping-design/article/resize-image-css </br>
+https://www.w3schools.com/cssref/pr_background-image.php </br>
+
 
