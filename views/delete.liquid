@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>What post do you wish to delete</h1>
-    <h2>Delete Post</h2>
-    <form action="/delete" method="POST">
-      <div>
-        <label for="blog">Blog to delete?</label>
-        <input name="blog" id="blog" value="#">
-      </div>
-      <div>
-        <button>Delete</button>
+    <div id="deletePage">
+      <h1>Delete Post</h1>
+      <h2>Simply just add the ID of the post you wish to delete</h2>
+      <form action="/delete" method="POST">
+        <div>
+          <label for="blog">Blog ID:</label>
+          <input name="blog" id="blog" value="#">
+        </div>
+        <div>
+          <button>Delete</button>
+        </div>
       </div>
     </form>
   </body>

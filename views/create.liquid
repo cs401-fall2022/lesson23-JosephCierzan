@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1>What kind of posr are you going to make?</h1>
-    <h2>Create Post</h2>
-    <form action="/create" method="POST">
-      <div>
-        <label for="blog">What is your blog txt?</label>
-        <input name="blog" id="blog" value="...">
-      </div>
-      <div>
-        <button>Post</button>
+    <div id="createPage">
+      <h1>Create Post</h1>
+      <h2>I wonder what kind of post you are going to make?</h2>
+      <form action="/create" method="POST">
+        <div>
+          <label for="blog">Enter your text:</label>
+          <input name="blog" id="blog" value="...">
+        </div>
+        <div>
+          <button>Post</button>
+        </div>
       </div>
     </form>
   </body>

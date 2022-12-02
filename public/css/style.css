@@ -105,5 +105,26 @@ h2 {
   text-align: center;
 }
 
+#createPage {
+  background-color: #2E0219;
+  padding: 50px;
+  margin-top: 10px;
+  border-radius: 10%;
+}
+
+#deletePage {
+  background-color: #2E0219;
+  padding: 50px;
+  margin-top: 10px;
+  border-radius: 10%;
+}
+
+#editPage {
+  background-color: #2E0219;
+  padding: 50px;
+  margin-top: 10px;
+  border-radius: 10%;
+}
+
 
 
